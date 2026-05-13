@@ -40,7 +40,7 @@ ExpenseProject/
 ├── .env                # Environment variables (Secrets)
 ├── .gitignore          # Git exclusion rules
 └── requirements.txt    # Python dependencies
-
+```
 
 
 ## Step and Step way to run ExpenseTracker on windows
