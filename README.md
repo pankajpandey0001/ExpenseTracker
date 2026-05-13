@@ -24,7 +24,7 @@ A robust full-stack application that combines **FastAPI**, **PostgreSQL**, and *
 ```text
 ExpenseProject/
 ├── app/
-│   ├── __init__.py     # JWT & Security logic
+│   ├── __init__.py     # It is a nametag for a folder that tells that it is a python package and helps in testing the project.
 │   ├── auth.py         # JWT & Security logic
 │   ├── database.py     # SQLAlchemy engine & session
 │   ├── main.py         # FastAPI routes & Knapsack logic
@@ -35,8 +35,8 @@ ExpenseProject/
 │   ├── style.css       # Style or css
 │   └── index.html      # HTML code
 ├── tests/
-│   └── test_main.py    # Pytest suite
-│   └── __init__.py    # Pytest suite
+│   └── test_main.py    # It is a nametag for a folder that tells that it is a python package and helps in testing the project.
+│   └── __init__.py     # Pytest suite
 ├── .env                # Environment variables (Secrets)
 ├── .gitignore          # Git exclusion rules
 └── requirements.txt    # Python dependencies
