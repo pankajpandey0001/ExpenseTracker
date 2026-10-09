@@ -31,7 +31,6 @@ The project is built on a high-performance modern tech stack optimized for massi
 | **Event Streaming** | Apache Kafka | Distributed message broker receiving completed settlement events from the outbox relay. |
 | **Container Runtime** | Docker & Docker Compose | Local orchestration for isolated PostgreSQL, Redis, and Kafka infrastructure. |
 
----
 
 ### Core Project Dependencies (Maven `pom.xml` / Gradle `build.gradle` Reference)
 * `spring-boot-starter-web` (REST API & Embedded Tomcat/Undertow)
@@ -42,7 +41,6 @@ The project is built on a high-performance modern tech stack optimized for massi
 * `lombok` (Boilerplate reduction)
 * `flyway-core` / `liquibase-core` *(Optional)* (Database schema migration versioning)
 
----
 
 ## 📁 Repository Structure
 
@@ -59,7 +57,6 @@ com.fintech.ledger
 └── streaming                    # Transactional outbox polling workers and Kafka event dispatchers
 ```
 
----
 
 ## Getting Started & Local Development
 
