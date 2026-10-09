@@ -17,7 +17,6 @@ An enterprise-grade, distributed **Core Financial Settlement & Double-Entry Ledg
 * **Distributed Idempotency:** Guarded by Redis (`SETNX` and cryptographic request fingerprinting) to instantly return cached receipts or reject concurrent duplicate requests with an HTTP `409 Conflict`.
 * **Transactional Outbox Pattern:** Database updates and outgoing message payloads are committed within the exact same atomic transaction, ensuring zero data loss before asynchronous relay to Apache Kafka.
 
----
 
 ## Technology Stack & Dependencies
 
