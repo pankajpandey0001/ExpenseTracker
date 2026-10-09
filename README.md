@@ -9,7 +9,7 @@
 ![Validation](https://img.shields.io/badge/Spring-Validation-brightgreen.svg) 
 ![Flyway](https://img.shields.io/badge/Flyway-Database%20Migration-CC0200.svg)
 
-
+z
 # Intelligent Expense & Budget Optimizer API
 
 A robust full-stack application that combines **FastAPI**, **PostgreSQL**, and **React** to provide secure expense tracking and automated budget optimization using the **0/1 Knapsack Algorithm**.
