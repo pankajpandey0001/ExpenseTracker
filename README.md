@@ -104,7 +104,7 @@ Run the Spring Boot application using the Maven wrapper:
 ./mvnw spring-boot:run
 ```
 
-<hr style="height: 6px; border-width: 0; background-color: #333; margin: 20px 0;">
+<hr style="height: 10px; border-width: 0; background-color: #333; margin: 20px 0;">
 
 ## 📜 License
 
