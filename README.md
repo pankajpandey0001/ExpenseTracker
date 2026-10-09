@@ -1,15 +1,3 @@
-[![Apache Maven](https://img.shields.io/badge/Apache%20Maven-Build-C71A36.svg)](https://maven.apache.org/)
-[![Spring Boot Maven Plugin](https://img.shields.io/badge/Spring%20Boot-Maven%20Plugin-brightgreen.svg)](https://docs.spring.io/spring-boot/4.1.1/maven-plugin)
-[![OCI Image](https://img.shields.io/badge/OCI-Image%20Build-blue.svg)](https://opencontainers.org/)
-[![Spring Boot Testcontainers](https://img.shields.io/badge/Spring%20Boot-Testcontainers-brightgreen.svg)](https://docs.spring.io/spring-boot/4.1.1/reference/testing/testcontainers.html#testing.testcontainers)
-[![Testcontainers PostgreSQL](https://img.shields.io/badge/Testcontainers-PostgreSQL-4169E1.svg)](https://java.testcontainers.org/modules/databases/postgres/)
-[![Spring Web](https://img.shields.io/badge/Spring%20Web-REST%20API-brightgreen.svg)](https://spring.io/projects/spring-framework)
-[![Spring Data JPA](https://img.shields.io/badge/Spring%20Data-JPA-brightgreen.svg)](https://spring.io/projects/spring-data-jpa)
-[![Spring Data Redis](https://img.shields.io/badge/Spring%20Data-Redis-red.svg)](https://spring.io/projects/spring-data-redis)
-[![Spring Validation](https://img.shields.io/badge/Spring-Validation-brightgreen.svg)](https://docs.spring.io/spring-boot/4.1.1/reference/io/validation.html)
-[![Flyway Migration](https://img.shields.io/badge/Flyway-Database%20Migration-CC0200.svg)](https://www.red-gate.com/products/flyway/)
-[![Testcontainers](https://img.shields.io/badge/Testcontainers-Integration%20Testing-2496ED.svg)](https://testcontainers.com/)
-
 # Intelligent Expense & Budget Optimizer API
 
 A robust full-stack application that combines **FastAPI**, **PostgreSQL**, and **React** to provide secure expense tracking and automated budget optimization using the **0/1 Knapsack Algorithm**.
