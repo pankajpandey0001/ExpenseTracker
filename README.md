@@ -33,6 +33,7 @@ The project is built on a high-performance modern tech stack optimized for massi
 
 
 ### Core Project Dependencies (Maven `pom.xml` / Gradle `build.gradle` Reference)
+---
 * `spring-boot-starter-web` (REST API & Embedded Tomcat/Undertow)
 * `spring-boot-starter-data-jpa` (Hibernate ORM & Database Persistence)
 * `spring-boot-starter-data-redis` (Jedis/Lettuce Redis client integration)
