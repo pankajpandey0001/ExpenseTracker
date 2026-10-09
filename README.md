@@ -8,7 +8,7 @@
 
 An enterprise-grade, distributed **Core Financial Settlement & Double-Entry Ledger Engine** modeled after modern banking rails and payment platforms like Stripe and Adyen. Designed from the ground up for zero-drift financial accuracy, high concurrency, strict idempotency, and reliable event streaming.
 
-#---
+---
 
 ## 🚀 Key Architectural Invariants
 
@@ -104,7 +104,7 @@ Run the Spring Boot application using the Maven wrapper:
 ./mvnw spring-boot:run
 ```
 
----
+<hr style="height: 6px; border-width: 0; background-color: #333; margin: 20px 0;">
 
 ## 📜 License
 
