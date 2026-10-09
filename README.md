@@ -8,7 +8,6 @@
 
 An enterprise-grade, distributed **Core Financial Settlement & Double-Entry Ledger Engine** modeled after modern banking rails and payment platforms like Stripe and Adyen. Designed from the ground up for zero-drift financial accuracy, high concurrency, strict idempotency, and reliable event streaming.
 
----
 
 ## Key Architectural Invariants
 
@@ -68,15 +67,15 @@ com.fintech.ledger
 ### Prerequisites
 * Java Development Kit (JDK) 21+ installed.
 * Docker & Docker Compose for spinning up local infrastructure services.
----
+
 #### 1. Clone the Repository
 `git clone [https://github.com/pankajpandey22/core-financial-ledger.git](https://github.com/pankajpandey22/core-financial-ledger.git)`.
 `cd core-financial-ledger`
----
+
 #### 2. Spin Up Infrastructure Services
 Start PostgreSQL, Redis, and Apache Kafka locally using Docker Compose.
 `docker-compose up -d`
----
+
 #### 3. Configure Application Properties
 * Verify your src/main/resources/application.yml or application.properties points to the local database, Redis, and Kafka endpoints.
 ```
@@ -92,7 +91,7 @@ spring:
   kafka:
       bootstrap-servers: localhost:9092
 ```
----
+
 #### 4. Build and Run the Application
 * Run the Spring Boot application using your preferred build tool.
 `./mvnw spring-boot:run`
