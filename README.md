@@ -1,110 +1,113 @@
-# Core Financial Settlement & Double-Entry Ledger Engine
+# Intelligent Expense & Budget Optimizer API
 
-[![Java 21](https://img.shields.io/badge/Java-21-orange.svg)](https://www.oracle.com/java/)
-[![Spring Boot 3.x](https://img.shields.io/badge/Spring%20Boot-3.x-brightgreen.svg)](https://spring.io/projects/spring-boot)
-[![PostgreSQL](https://img.shields.io/badge/PostgreSQL-ACID-blue.svg)](https://www.postgresql.org/)
-[![Redis](https://img.shields.io/badge/Redis-Distributed%20Lock-red.svg)](https://redis.io/)
-[![Apache Kafka](https://img.shields.io/badge/Apache%20Kafka-Outbox%20Streaming-orange.svg)](https://kafka.apache.org/)
+A robust full-stack application that combines **FastAPI**, **PostgreSQL**, and **React** to provide secure expense tracking and automated budget optimization using the **0/1 Knapsack Algorithm**.
 
-An enterprise-grade, distributed **Core Financial Settlement & Double-Entry Ledger Engine** modeled after modern banking rails and payment platforms like Stripe and Adyen. Designed from the ground up for zero-drift financial accuracy, high concurrency, strict idempotency, and reliable event streaming.
+## 🚀 Key Features
 
----
+-   **JWT Authentication:** Secure user registration and login with encrypted password hashing (Bcrypt).
+-   **Smart Budgeting:** An intelligent endpoint that uses Dynamic Programming (0/1 Knapsack) to recommend the best combination of expenses to maximize "priority value" within a user-defined budget.
+-   **RESTful Architecture:** Complete CRUD operations for managing expenses.
+-   **Relational Mapping:** Designed with SQLAlchemy ORM and PostgreSQL for reliable data persistence.
+-   **Modern UI:** A responsive React-based dashboard styled with Tailwind CSS.
+-   **Automated Testing:** Comprehensive API testing suite built with Pytest.
 
-## Key Architectural Invariants
+## 🛠️ Technical Stack
 
-* **Strict Immutability (Append-Only):** Ledger entry rows are never updated or deleted. Corrections are handled exclusively via compensating reversal transactions.
-* **Zero-Sum Balance Rule:** Every multi-leg transaction must satisfy \(\sum \text{Debits} - \sum \text{Credits} = 0\) before touching account balances.
-* **Pessimistic Row-Level Locking:** Accounts are protected using database-level row locks (`SELECT ... FOR UPDATE`) sorted lexicographically to eliminate deadlocks.
-* **Distributed Idempotency:** Guarded by Redis (`SETNX` and cryptographic request fingerprinting) to instantly return cached receipts or reject concurrent duplicate requests with an HTTP `409 Conflict`.
-* **Transactional Outbox Pattern:** Database updates and outgoing message payloads are committed within the exact same atomic transaction, ensuring zero data loss before asynchronous relay to Apache Kafka.
+-   **Backend:** FastAPI (Python), SQLAlchemy, Pydantic, Jose (JWT), Passlib
+-   **Database:** PostgreSQL
+-   **Frontend:** React.js, Tailwind CSS
+-   **Testing:** Pytest, HTTPX
+-   **Environment:** Python-dotenv
 
----
-
-## Technology Stack & Dependencies
-
-The project is built on a high-performance modern tech stack optimized for massive throughput and thread efficiency:
-
-| Component | Technology | Purpose |
-| :--- | :--- | :--- |
-| **Runtime & Language** | Java 21 | Leverages **Virtual Threads** (Project Loom) to handle thousands of concurrent I/O-bound requests with minimal memory overhead. |
-| **Framework** | Spring Boot 3.x | Core application container managing REST controllers, dependency injection, and declarative transactions (`@Transactional`). |
-| **Relational Vault** | PostgreSQL | Single source of truth providing strict ACID guarantees, constraints, and pessimistic locking. |
-| **Concurrency Shield** | Redis | In-memory key-value store for atomic distributed locks, request deduplication, and TTL response caching. |
-| **Event Streaming** | Apache Kafka | Distributed message broker receiving completed settlement events from the outbox relay. |
-| **Container Runtime** | Docker & Compose | Local orchestration for isolated PostgreSQL, Redis, and Kafka infrastructure. |
-
-### Core Project Dependencies
-* `spring-boot-starter-web` (REST API & Embedded Tomcat/Undertow)
-* `spring-boot-starter-data-jpa` (Hibernate ORM & Database Persistence)
-* `spring-boot-starter-data-redis` (Jedis/Lettuce Redis client integration)
-* `spring-kafka` (Apache Kafka producer/consumer template support)
-* `postgresql` (PostgreSQL JDBC Driver)
-* `lombok` (Boilerplate reduction)
-* `flyway-core` / `liquibase-core` *(Optional)* (Database schema migration versioning)
-
----
-
-## Repository Structure
+## 📂 Project Structure
 
 ```text
-com.fintech.ledger
-│
-├── LedgerApplication.java       # Spring Boot main entry point & thread configuration
-│
-├── gateway                      # REST controllers, DTO data contracts, and global exception handlers
-├── deduplication                # Redis distributed locks, payload hashing, and idempotency interceptors
-├── core                         # Orchestration engine, zero-sum verification, and balance checks
-├── ledger                       # Financial domain entities, enums (DEBIT/CREDIT), and custom exceptions
-├── storage                      # PostgreSQL persistence, row-level locking queries, and append-only entries
-└── streaming                    # Transactional outbox polling workers and Kafka event dispatchers
+ExpenseProject/
+├── app/
+│   ├── __init__.py     # It is a nametag for a folder that tells that it is a python package and helps in testing the project.
+│   ├── auth.py         # JWT & Security logic
+│   ├── database.py     # SQLAlchemy engine & session
+│   ├── main.py         # FastAPI routes & Knapsack logic
+│   ├── models.py       # Database table schemas
+│   └── schemas.py      # Pydantic data validation
+├── frontend/
+│   ├── app.js          # JavaScript logic
+│   ├── style.css       # Style or css
+│   └── index.html      # HTML code
+├── tests/
+│   └── test_main.py    # It is a nametag for a folder that tells that it is a python package and helps in testing the project.
+│   └── __init__.py     # Pytest suite
+├── .env                # Environment variables (Secrets)
+├── .gitignore          # Git exclusion rules
+└── requirements.txt    # Python dependencies
 ```
 
----
 
-## Getting Started & Local Development
+## Step and Step way to run ExpenseTracker on windows
 
-### Prerequisites
-* **Java Development Kit (JDK) 21+** installed.
-* **Docker & Docker Compose** for spinning up local infrastructure services.
+Phase1: Download Dependies-
+1.  Python- Go to python.org/downloads and download latest version.
+    When running the installer, check the box "Add Python.exe to PATH".
 
-### Execution Steps
+2.  Nodejs- Go to nodes.org and download "LTS"(long term support) version.
+    Install it in default setting, [Used for frontend server].
 
-#### 1. Clone the Repository
-```bash
-git clone https://github.com/pankajpandey22/core-financial-ledger.git
-cd core-financial-ledger
-```
+3.  Git- Go to git-scm.com/downloads and download for windows.
+    Install it in default setting, [Used for GitHub].
 
-#### 2. Spin Up Infrastructure Services
-Start PostgreSQL, Redis, and Apache Kafka locally using Docker Compose:
-```bash
-docker-compose up -d
-```
+4.  Postgresql- Go to postgresql.org/download/windows/ and download installer.
+    During installation, it will ask you to create password for the postgres superuser, and leave port at 5432.
 
-#### 3. Configure Application Properties
-Verify your `src/main/resources/application.yml` or `application.properties` points to the local infrastructure endpoints:
+5.  VS Code- Go to code.visualstudio.com/download then download for windows.
+    Open the downloaded file then accept terms and click on "Add to PATH" and "Add 'Open with Code' action".
 
-```yaml
-spring:
-  datasource:
-    url: jdbc:postgresql://localhost:5432/ledger_db
-    username: postgres
-    password: password
-  data:
-    redis:
-      host: localhost
-      port: 6379
-  kafka:
-    bootstrap-servers: localhost:9092
-```
 
-#### 4. Build and Run the Application
-Run the Spring Boot application using the Maven wrapper:
-```bash
-./mvnw spring-boot:run
-```
+Phase2: Set Up the Database-
+1.  Open the pgadmin 4 app, [it automatically installed after your postgresql installes successfully].
 
----
+2.  Enter password you created to unlock it.
 
-## License
-This project is licensed under the terms of the **MIT License**.
+3.  On the left menu, expand Servers and click PostgreSQL.
+
+4.  Right-Click on Databases then Create then Database.
+
+5.  Name it "expense_db" and click save.
+
+
+Phase3: Project Preperation-
+1.  Open cmd.
+
+2.  Install Backend Requirements.
+    >> pip install -r requirements.txt
+
+3.  Setup your Secret ".env" file.
+      i.  Open your project in VS code.
+     ii.  Write this in .env file
+            DATABASE_URL=postgresql://postgres:YOUR_PASSWORD_HERE@localhost:5432/expense_db
+            SECRET_KEY="Write_any_password_here"
+            ALGORITHM=HS256
+            ACCESS_TOKEN_EXPIRE_MINUTES=60
+
+
+Phase4: Running the program locally-
+1.  Open cmd
+
+2.  Navigate to the ExpenseTracker Folder.
+        cd path\to\your\ExpenseTracker
+
+3.  Now paste this code in cmd.
+        python -m venv venv
+        venv\Scripts\activate
+
+4.  Run the backend.
+        paste this code: fastapi dev app/main.py
+        when you see "Application startup complete" then the backend is ready.
+
+5.  Run the frontend.
+        Open another cmd window and don't close the backend cmd.
+        Navigate to the frontend folder.
+            cd path\to\your\ExpenseTracker\frontend
+        Paste this code: npx serve -l 3000
+        and after it then you see 2 url then copy it an paste in you browser.
+
+
