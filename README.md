@@ -1,15 +1,15 @@
 ![Apache Maven](https://img.shields.io/badge/Apache%20Maven-Build-C71A36.svg) 
 ![Spring Boot Maven Plugin](https://img.shields.io/badge/Spring%20Boot-Maven%20Plugin-brightgreen.svg) 
 ![OCI Image](https://img.shields.io/badge/OCI-Image%20Build-blue.svg) 
-![Testcontainers](https://img.shields.io/badge/Testcontainers-Integration%20Testing-2496ED.svg) 
-![PostgreSQL Testcontainers](https://img.shields.io/badge/Testcontainers-PostgreSQL-4169E1.svg) 
-![Spring Web](https://img.shields.io/badge/Spring%20Web-REST%20API-brightgreen.svg) 
+![Spring Boot Testcontainers](https://img.shields.io/badge/Spring%20Boot-Testcontainers-brightgreen.svg) 
+![Testcontainers PostgreSQL](https://img.shields.io/badge/Testcontainers-PostgreSQL-4169E1.svg) 
+![Spring Web](https://img.shields.io/badge/Spring-Web-brightgreen.svg) 
 ![Spring Data JPA](https://img.shields.io/badge/Spring%20Data-JPA-brightgreen.svg) 
 ![Spring Data Redis](https://img.shields.io/badge/Spring%20Data-Redis-red.svg) 
-![Validation](https://img.shields.io/badge/Spring-Validation-brightgreen.svg) 
-![Flyway](https://img.shields.io/badge/Flyway-Database%20Migration-CC0200.svg)
+![Spring Validation](https://img.shields.io/badge/Spring-Validation-brightgreen.svg) 
+![Flyway Migration](https://img.shields.io/badge/Flyway-Database%20Migration-CC0200.svg) 
+![Testcontainers](https://img.shields.io/badge/Testcontainers-Integration%20Testing-2496ED.svg)
 
-z
 # Intelligent Expense & Budget Optimizer API
 
 A robust full-stack application that combines **FastAPI**, **PostgreSQL**, and **React** to provide secure expense tracking and automated budget optimization using the **0/1 Knapsack Algorithm**.
