@@ -104,7 +104,7 @@ Run the Spring Boot application using the Maven wrapper:
 ./mvnw spring-boot:run
 ```
 
-<img src="https://placehold.co" height="10" width="100%">
+<details open><summary></summary><br></details>
 
 ## 📜 License
 This project is licensed under the terms of the **MIT License**.
