@@ -9,6 +9,7 @@
 An enterprise-grade, distributed **Core Financial Settlement & Double-Entry Ledger Engine** modeled after modern banking rails and payment platforms like Stripe and Adyen. Designed from the ground up for zero-drift financial accuracy, high concurrency, strict idempotency, and reliable event streaming.
 
 ---
+---
 
 ## Key Architectural Invariants
 
@@ -18,6 +19,7 @@ An enterprise-grade, distributed **Core Financial Settlement & Double-Entry Ledg
 * **Distributed Idempotency:** Guarded by Redis (`SETNX` and cryptographic request fingerprinting) to instantly return cached receipts or reject concurrent duplicate requests with an HTTP `409 Conflict`.
 * **Transactional Outbox Pattern:** Database updates and outgoing message payloads are committed within the exact same atomic transaction, ensuring zero data loss before asynchronous relay to Apache Kafka.
 
+---
 ---
 
 ## Technology Stack & Dependencies
@@ -43,6 +45,7 @@ The project is built on a high-performance modern tech stack optimized for massi
 * `flyway-core` / `liquibase-core` *(Optional)* (Database schema migration versioning)
 
 ---
+---
 
 ## Repository Structure
 
@@ -59,6 +62,7 @@ com.fintech.ledger
 └── streaming                    # Transactional outbox polling workers and Kafka event dispatchers
 ```
 
+---
 ---
 
 ## Getting Started & Local Development
@@ -104,6 +108,7 @@ Run the Spring Boot application using the Maven wrapper:
 ./mvnw spring-boot:run
 ```
 
+---
 ---
 
 ## License
