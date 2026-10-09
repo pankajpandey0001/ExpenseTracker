@@ -1,4 +1,4 @@
-# 🏦 Core Financial Settlement & Double-Entry Ledger Engine
+# Core Financial Settlement & Double-Entry Ledger Engine
 
 [![Java 21](https://img.shields.io/badge/Java-21-orange.svg)](https://www.oracle.com/java/)
 [![Spring Boot 3.x](https://img.shields.io/badge/Spring%20Boot-3.x-brightgreen.svg)](https://spring.io/projects/spring-boot)
@@ -10,7 +10,7 @@ An enterprise-grade, distributed **Core Financial Settlement & Double-Entry Ledg
 
 ---
 
-## 🚀 Key Architectural Invariants
+## Key Architectural Invariants
 
 * **Strict Immutability (Append-Only):** Ledger entry rows are never updated or deleted. Corrections are handled exclusively via compensating reversal transactions.
 * **Zero-Sum Balance Rule:** Every multi-leg transaction must satisfy \(\sum \text{Debits} - \sum \text{Credits} = 0\) before touching account balances.
@@ -20,7 +20,7 @@ An enterprise-grade, distributed **Core Financial Settlement & Double-Entry Ledg
 
 ---
 
-## 🧰 Technology Stack & Dependencies
+## Technology Stack & Dependencies
 
 The project is built on a high-performance modern tech stack optimized for massive throughput and thread efficiency:
 
@@ -44,7 +44,7 @@ The project is built on a high-performance modern tech stack optimized for massi
 
 ---
 
-## 📁 Repository Structure
+## Repository Structure
 
 ```text
 com.fintech.ledger
@@ -61,13 +61,13 @@ com.fintech.ledger
 
 ---
 
-## 💻 Getting Started & Local Development
+## Getting Started & Local Development
 
 ### Prerequisites
 * **Java Development Kit (JDK) 21+** installed.
 * **Docker & Docker Compose** for spinning up local infrastructure services.
 
-### 🛠️ Execution Steps
+### Execution Steps
 
 #### 1. Clone the Repository
 ```bash
@@ -106,5 +106,5 @@ Run the Spring Boot application using the Maven wrapper:
 
 ---
 
-## 📜 License
+## License
 This project is licensed under the terms of the **MIT License**.
