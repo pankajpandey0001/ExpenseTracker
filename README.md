@@ -104,7 +104,7 @@ Run the Spring Boot application using the Maven wrapper:
 ./mvnw spring-boot:run
 ```
 
-<progress value="100" max="100" style="width: 100%;"></progress>
+---
 
 ## 📜 License
 This project is licensed under the terms of the **MIT License**.
