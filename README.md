@@ -1,11 +1,10 @@
-# 🛠️ Core Financial Settlement & Double-Entry Ledger Engine
+# 🏦 Core Financial Settlement & Double-Entry Ledger Engine
 
-[![Java 21](https://shields.io)](https://www.oracle.com/java/)
-[![Spring Boot 3.x](https://shields.io)](https://spring.io/projects/spring-boot)
-[![PostgreSQL](https://shields.io)](https://www.postgresql.org/)
-[![Redis](https://shields.io)](https://redis.io/)
-[![Apache Kafka](https://shields.io)](https://kafka.apache.org/)
-[![License: MIT](https://shields.io)](https://opensource.org)
+[![Java 21](https://img.shields.io/badge/Java-21-orange.svg)](https://www.oracle.com/java/)
+[![Spring Boot 3.x](https://img.shields.io/badge/Spring%20Boot-3.x-brightgreen.svg)](https://spring.io/projects/spring-boot)
+[![PostgreSQL](https://img.shields.io/badge/PostgreSQL-ACID-blue.svg)](https://www.postgresql.org/)
+[![Redis](https://img.shields.io/badge/Redis-Distributed%20Lock-red.svg)](https://redis.io/)
+[![Apache Kafka](https://img.shields.io/badge/Apache%20Kafka-Outbox%20Streaming-orange.svg)](https://kafka.apache.org/)
 
 An enterprise-grade, distributed **Core Financial Settlement & Double-Entry Ledger Engine** modeled after modern banking rails and payment platforms like Stripe and Adyen. Designed from the ground up for zero-drift financial accuracy, high concurrency, strict idempotency, and reliable event streaming.
 
